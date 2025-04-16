@@ -65,16 +65,24 @@ export const logout = async (req: Request, res: Response) => {
   res.json("User logged out");
 };
 
-export const getProfile = async (req: Request, res: Response) => {
+export const getProfile = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
   const userID = req.user.payload.id;
   const userFound = await User.findById(userID);
 
   if (!userFound) {
-    return res.status(404).json({ message: "User not found" });
+    throw new Error("User not found");
   }
 
-  res.json({
-    username: userFound.username,
-    email: userFound.email,
-  });
+  try {
+    res.json({
+      id: userFound._id,
+      username: userFound.username,
+      email: userFound.email,
+    });
+  } catch (err: any) {
+    res.status(404).json({ message: err.message });
+  }
 };

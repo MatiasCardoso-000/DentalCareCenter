@@ -1,21 +1,36 @@
 import { Link } from "react-router-dom";
+import { Logo } from "../Logo/Logo";
+
+import { useForm } from "react-hook-form";
 
 export const RegisterForm = () => {
+  const { register, handleSubmit } = useForm();
+
   return (
-    <div className="flex flex-col h-screen justify-center items-center bg-white">
-      <form className="md:w-[500px] flex flex-col gap-4 items-center">
+    <div className="flex flex-col h-screen justify-center items-center bg-white relative">
+      <div className="absolute top-0 left-0">
+        <Link to={"/"}>
+          <Logo />
+        </Link>
+      </div>
+      <form
+        className="md:w-[500px] flex flex-col gap-4 items-center"
+        onSubmit={handleSubmit((value) => {
+          console.log(value);
+        })}
+      >
         <div className="w-[450px] flex justify-start">
           <h1 className="text-2xl text-zinc-800 font-semibold">Register</h1>
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="name" className=" font-semibold text-zinc-800">
+          <label htmlFor="username" className=" font-semibold text-zinc-800">
             Name:
           </label>
           <input
             type="text"
-            id="name"
-            name="name"
-            className="border rounded-md border-zinc-800 p-4 md:w-[450px] outline-0 placeholder-zinc-800 text-white"
+            id="username"
+            {...register("username", { required: true })}
+            className="border rounded-md border-zinc-800 p-4 md:w-[450px] outline-0 placeholder-zinc-800 text-zinc-800"
             placeholder="Enter your name"
           />
         </div>
@@ -26,8 +41,8 @@ export const RegisterForm = () => {
           <input
             type="email"
             id="email"
-            name="email"
-            className="border rounded-md border-zinc-800 p-4 md:w-[450px]  outline-0 placeholder-zinc-800 text-white"
+            {...register("email", { required: true })}
+            className="border rounded-md border-zinc-800 p-4 md:w-[450px]  outline-0 placeholder-zinc-800 text-zinc-800"
             placeholder="Enter your email"
           />
         </div>
@@ -38,8 +53,8 @@ export const RegisterForm = () => {
           <input
             type="password"
             id="password"
-            name="password"
-            className="border rounded-md border-zinc-800 p-4 md:w-[450px]  outline-0 placeholder-zinc-800 text-white"
+            {...register("password", { required: true })}
+            className="border rounded-md border-zinc-800 p-4 md:w-[450px]  outline-0 placeholder-zinc-800 text-zinc-800"
             placeholder="Enter your password"
           />
         </div>
@@ -50,8 +65,10 @@ export const RegisterForm = () => {
           <input
             type="password"
             id="confirmPassword"
-            name="password"
-            className="border rounded-md border-zinc-800 p-4 md:w-[450px]  outline-0 placeholder-zinc-800 text-white"
+            {...register("confirmPassword", {
+              required: true,
+            })}
+            className="border rounded-md border-zinc-800 p-4 md:w-[450px]  outline-0 placeholder-zinc-800 text-zinc-800"
             placeholder="Confirm your password"
           />
         </div>

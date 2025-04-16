@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 
-
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
@@ -11,6 +10,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
+  confirmPassword: {
+    type: String,
+    require: true,
+  },
   email: {
     type: String,
     require: true,
@@ -18,5 +21,4 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-
-export default mongoose.model('User', userSchema)
+export default mongoose.model("User", userSchema);

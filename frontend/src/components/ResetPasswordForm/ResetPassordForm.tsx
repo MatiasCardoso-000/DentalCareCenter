@@ -1,7 +1,14 @@
+import { Link } from "react-router-dom";
+import { Logo } from "../Logo/Logo";
 
 export const ResetPasswordForm = () => {
   return (
-    <div className="flex flex-col h-screen justify-center items-center bg-white">
+    <div className="flex flex-col h-screen justify-center items-center bg-white relative">
+      <div className="absolute top-0 left-0">
+        <Link to={"/"}>
+          <Logo />
+        </Link>
+      </div>
       <form className="md:w-[500px] flex flex-col gap-4 items-center">
         <div className="w-[450px] flex justify-start">
           <h1 className="text-2xl text-zinc-800 font-semibold">
@@ -28,7 +35,7 @@ export const ResetPasswordForm = () => {
             type="password"
             id="confirPassword"
             name="password"
-            className="border rounded-md border-zinc-800 text-white p-4 md:w-[450px]  outline-0 placeholder-zinc-800"
+            className="border rounded-md border-zinc-800 text-zinc-800 p-4 md:w-[450px]  outline-0 placeholder-zinc-800"
             placeholder="Confirm your password"
           />
         </div>
