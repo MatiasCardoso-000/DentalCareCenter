@@ -1,24 +1,20 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Logo } from "../Logo/Logo";
 import { useForm } from "react-hook-form";
 import { useAuth } from "../../hooks/useAuth";
 import { User } from "../../types/User.interface";
-import { useEffect } from "react";
 import { Input } from "../Input/Input";
 
 export const RegisterForm = () => {
+  
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<User>();
 
-  const { signUp, isAuthenticated, errors: RegisterErrors } = useAuth();
-  const navigation = useNavigate();
+  const { signUp, errors: RegisterErrors } = useAuth();
 
-  useEffect(() => {
-    if (isAuthenticated) navigation("/");
-  }, [isAuthenticated]);
 
   const onSubmit = handleSubmit(async (values: User) => {
     signUp(values);
@@ -35,9 +31,7 @@ export const RegisterForm = () => {
       })}
 
       <div className="absolute top-0 left-0">
-        <Link to={"/"}>
           <Logo />
-        </Link>
       </div>
       <form
         className="md:w-[500px] flex flex-col gap-4 items-center"

@@ -1,9 +1,7 @@
-
-
 export const InfoSections = () => {
   return (
-    <>
-     <section className="md:h-max flex w-full justify-between p-2">
+    <section >
+      <section className="md:h-max flex w-full justify-between p-2">
         <div className=" w-full flex flex-col items-start  gap-4 m-auto px-[100px]">
           <div className="flex items-center">
             <h1 className="text-xl font-bold">DentalCare Center</h1>
@@ -34,7 +32,7 @@ export const InfoSections = () => {
 
           <img
             src="../../../public/second-section-image.PNG"
-            alt="woman dentist image"
+            alt="woman in the dentist image"
             className="w-[600px] mx-auto"
           />
         </div>
@@ -156,7 +154,6 @@ export const InfoSections = () => {
           </li>
         </ul>
       </section>
-    
-    </>
-  )
-}
+    </section>
+  );
+};

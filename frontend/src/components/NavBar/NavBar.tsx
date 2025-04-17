@@ -6,7 +6,7 @@ export const NavBar = () => {
     <nav className="absolute  left-[45%] right-[45%] w-full bg-white">
       <ul className="flex gap-6 w-full text-center">
         <li className="font-semibold cursor-pointer hover:text-[#03B4C1] hover:border-b hover:border-[#03B4C1]">
-          <NavLink to={"/home"}>Home</NavLink>
+          <NavLink to={"/"}>Home</NavLink>
         </li>
         <li className="font-semibold cursor-pointer hover:text-[#03B4C1] hover:border-b hover:border-[#03B4C1]">
           <NavLink to={"/services"}>Services</NavLink>

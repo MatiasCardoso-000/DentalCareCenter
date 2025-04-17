@@ -42,6 +42,7 @@ export const login = async (req: Request, res: Response) => {
 
   try {
     if (!userFound) {
+      res.status(400).json({error:["El usuario no existe"]})
       throw new Error("Usuario no encontrado");
     }
 
@@ -50,6 +51,7 @@ export const login = async (req: Request, res: Response) => {
       (await bcrypt.compare(password, userFound.password));
 
     if (!passwordMatch) {
+      res.status(400).json({error:["Contraseña incorrecta"]})
       throw new Error("Contraseña incorrecta");
     }
 

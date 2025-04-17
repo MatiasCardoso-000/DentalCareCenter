@@ -5,5 +5,7 @@ export const AuthContext = createContext({
   user: {} as User,
   isAuthenticated: false,
   errors: [],
-  signUp: async (user:User): Promise<void> => {},
+  signUp: async (user: User): Promise<void> => {},
+  signIn: async (user: User): Promise<void> => {},
+  logout: () => {}
 });
