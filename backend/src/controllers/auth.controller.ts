@@ -3,11 +3,12 @@ import User from "../models/user.model";
 import bcrypt from "bcrypt";
 import { createToken } from "../libs/jwt";
 
-export const register = async (req: Request, res: Response) => {
+export const register = async (req: Request, res: Response): Promise<any> => {
   const { username, password, email } = req.body;
+  const userFound = await User.findOne({ email });
 
-  if (!username || !password || !email) {
-    throw new Error(" Todos los campos son obligatorios ");
+  if (userFound) {
+    return res.status(400).json(["The email is already in use"]);
   }
 
   const hashedPassword = await bcrypt.hash(password, 10);
@@ -23,7 +24,8 @@ export const register = async (req: Request, res: Response) => {
 
     const token = createToken({ id: userSaved._id });
     res.cookie("token", token);
-    res.json("User created sucessfully");
+
+    return res.json(userSaved);
   } catch (err: any) {
     res.status(400).json({ message: err.message });
   }

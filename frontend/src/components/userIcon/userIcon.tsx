@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
 
 export const UserIcon = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { user } = useAuth();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -10,15 +12,22 @@ export const UserIcon = () => {
 
   return (
     <>
-      <div
-        className="absolute top-4 right-4 cursor-pointer"
-        onClick={toggleMenu}
-      >
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
-          alt="user-icon"
-          className="w-[30px]"
-        />
+      <div className="w-full flex justify-end items-center gap-4 absolute top-4 right-4">
+      {user && (
+          <div className="flex ">
+            <p className="font-semibold text-zinc-800">
+              Bienvenido {user.username}!
+            </p>
+          </div>
+        )}
+        <div className=" cursor-pointer" onClick={toggleMenu}>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+            alt="user-icon"
+            className="w-[30px]"
+          />
+        </div>
+      
       </div>
 
       <div
