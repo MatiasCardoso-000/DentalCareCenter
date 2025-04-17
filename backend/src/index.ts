@@ -4,12 +4,11 @@ import { connectDB } from "./db";
 import { config } from "dotenv";
 import cors from 'cors'
 import cookieParser from "cookie-parser"
-import { PORT } from "./config/config";
 
 config();
 
 const app = express();
-
+const PORT = process.env.PORT || 4000;
 app.use(cors({
   origin: "http://localhost:5173"
 }))
