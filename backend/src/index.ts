@@ -4,6 +4,7 @@ import { connectDB } from "./db";
 import { config } from "dotenv";
 import cors from 'cors'
 import cookieParser from "cookie-parser"
+import { PORT } from "./config/config";
 
 config();
 
@@ -15,7 +16,7 @@ app.use(cors({
 app.use(express.json());
 app.use(cookieParser())
 
-const PORT = process.env.PORT || 1234;
+
 
 app.use("/auth", authRoutes);
 
