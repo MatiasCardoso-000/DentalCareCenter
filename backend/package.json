@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "tsnd --respawn --clear src/index.ts",
-    "start": "tsc src/index.ts"
+    "stage": "tsc && git status && git add ."
   },
   "keywords": [],
   "author": "",
