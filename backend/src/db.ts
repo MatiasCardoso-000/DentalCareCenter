@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 // Función para conectar a la base de datos
 
 export const connectDB = async () => {
- const MONGODB_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/turnodentista'
+ const MONGODB_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/turnodentista'
   
   try {
     if (!MONGODB_URI ) {
