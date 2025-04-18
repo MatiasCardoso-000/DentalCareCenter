@@ -10,7 +10,6 @@ export const UserIcon = () => {
     setIsOpen(!isOpen);
   };
 
-
   return (
     <>
       <div className="w-full flex justify-end items-center gap-4 absolute top-4 right-4">
@@ -36,20 +35,22 @@ export const UserIcon = () => {
         <ul className="w-full md:w-[200px]  bg-[#03B4C1] text-white rounded-lg shadow-lg p-4 text-center">
           {!isAuthenticated ? (
             <div>
-              <Link to={"/register"}>
-                <li className="hover:underline">Register</li>
+              <Link to={"/registro"}>
+                <li className="hover:underline">Registrate</li>
               </Link>
               <Link to={"/login"}>
-                <li className="hover:underline">Log in</li>
+                <li className="hover:underline">Logueate</li>
               </Link>
             </div>
           ) : (
             <div>
-              <Link to={"/profile"}>
-                <li className="hover:underline">Profile</li>
+              <Link to={"/perfil"}>
+                <li className="hover:underline">Perfil</li>
               </Link>
               <Link to={"/"}>
-                <li className="hover:underline" onClick={logout}>Log out</li>
+                <li className="hover:underline" onClick={logout}>
+                  Desconectar
+                </li>
               </Link>
             </div>
           )}

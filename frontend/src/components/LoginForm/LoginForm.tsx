@@ -81,7 +81,7 @@ export const LoginForm = () => {
       </form>
       <p className="mt-6 text-center text-zinc-900 font-semibold">
         Don't have an account?{" "}
-        <Link to={"/register"}>
+        <Link to={"/registro"}>
           {" "}
           <span className="text-[#03B4C1] font-bold">Register</span>{" "}
         </Link>

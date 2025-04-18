@@ -1,20 +1,30 @@
+import { useNavigate } from "react-router-dom";
+
 export const InfoSections = () => {
+
+  const navigate = useNavigate()
+
   return (
-    <section >
+    <section>
       <section className="md:h-max flex w-full justify-between p-2">
         <div className=" w-full flex flex-col items-start  gap-4 m-auto px-[100px]">
           <div className="flex items-center">
             <h1 className="text-xl font-bold">DentalCare Center</h1>
           </div>
-          <p className="text-xl">Get expert help and care at every visit.</p>
+          <p className="text-xl">
+            Obtenga ayuda y cuidados expertos en cada visita.
+          </p>
           <p className="w-[40%] text-4xl text-primary-500">
-            We offer a wide range of dental services, including check-ups,
-            cleanings, and more. We also offer a variety of dental products and
-            services, including dental implants, crowns, and teeth whitening.
+            Ofrecemos una amplia gama de servicios dentales, incluyendo
+            chequeos, limpiezas , y más. También ofrecemos una variedad de
+            productos dentales y servicios , incluyendo implantes dentales,
+            coronas y blanqueamiento dental.
           </p>
 
-          <button className="bg-[#03B4C1] p-4 text-white rounded-md mt-4 font-bold hover:bg-amber-600 cursor-pointer">
-            SET AN APPOINTMENT
+          <button className="bg-[#03B4C1] p-4 text-white rounded-md mt-4 font-bold hover:bg-amber-600 cursor-pointer" onClick={()=> {
+            navigate('/citas')
+          }}>
+            FIJAR UNA CITA
           </button>
         </div>
 
@@ -28,7 +38,7 @@ export const InfoSections = () => {
       </section>
       <section className="md:h-max flex justify-evenly gap-8 w-full m-auto  px-2 py-4">
         <div className="flex flex-col gap-4">
-          <h2 className="text-4xl font-bold">Our Services</h2>
+          <h2 className="text-4xl font-bold">Nuestros Servicios</h2>
 
           <img
             src="../../../public/second-section-image.PNG"
@@ -41,44 +51,45 @@ export const InfoSections = () => {
           <ul className="flex flex-col gap-4 mt-12">
             <li>
               <p className="text-2xl font-bold text-[#03B4C1] mb-2">
-                Dental Care
+                Cuidado Dental
               </p>
               <p className="text-xl">
-                Our dental care services are designed to help you maintain a
-                healthy smile and prevent dental problems before they become
-                serious. We offer a variety of services, including check-ups,
-                cleanings, and more. We also offer a variety of dental products
-                and services, including dental implants, crowns, and teeth
-                whitening.
+                Nuestros servicios de cuidado dental están diseñados para
+                ayudarle a mantener una sonrisa sana y prevenir problemas
+                dentales antes de que se conviertan en grave. Ofrecemos una
+                variedad de servicios, incluyendo chequeos, limpiezas, y más.
+                También ofrecemos una variedad de productos dentales y
+                servicios, incluyendo implantes dentales, coronas, y los dientes
+                blanqueamiento.
               </p>
             </li>
             <li>
               <p className="text-2xl font-bold text-[#03B4C1] mb-2">
-                Dental Implants
+                Implantes Dentales
               </p>
               <p className="text-xl">
-                Dental implants are a popular option for replacing missing
-                teeth. They are made of a strong, durable material and are
-                implanted into the jawbone to provide a stable foundation for
-                new teeth. Dental implants can help improve your appearance and
-                function, and they can also help prevent further tooth loss.
+                Los implantes dentales son una opción muy popular para sustituir
+                los dientes perdidos . Están hechos de un material resistente y
+                duradero y se implantan en el hueso maxilar para proporcionar
+                una base estable para nuevos dientes. Los implantes dentales
+                pueden ayudar a mejorar su aspecto y función, y también pueden
+                ayudar a prevenir la pérdida de más dientes.
               </p>
             </li>
             <li>
-              <p className="text-2xl font-bold text-[#03B4C1] mb-2">
-                Dental Crowns
-              </p>
+              <p className="text-2xl font-bold text-[#03B4C1] mb-2">Coronas</p>
               <p className="text-xl">
-                Dental crowns are a popular option for restoring damaged or
-                missing teeth. They are made of a strong, durable material and
-                are placed over the top of a tooth to fill in any gaps or
-                defects. Dental crowns can help improve your appearance and
-                function, and they can also help prevent further tooth loss.
+                Las coronas dentales son una opción popular para restaurar
+                dientes dañados o ausentes de . Están hechas de un material
+                resistente y duradero y se colocan sobre la parte superior de un
+                diente para rellenar cualquier hueco o defectos. Las coronas
+                dentales pueden ayudar a mejorar su aspecto y función, y también
+                pueden ayudar a prevenir la pérdida de más dientes.
               </p>
             </li>
           </ul>
 
-          <h3 className="text-2xl">Testimonials</h3>
+          <h3 className="text-2xl">Testimonios</h3>
           <p className="text-xl font-bold italic text-sky-600">
             "Volver a comer sin dolor y sonreír sin vergüenza fue posible con
             sus implantes. ¡Inversión que vale cada segundo!"
@@ -93,7 +104,7 @@ export const InfoSections = () => {
       <section className="w-full flex flex-col items-center p-2 gap-20">
         <div className="w-full  flex justify-evenly items-center  mx-auto px-4 ">
           <h2 className="text-4xl font-semibold mb-2 border-t-4 border-[#03B4C1] border-spacing-y-1.5">
-            Our Main Services
+            Nuestros principales servicios
           </h2>
           <img
             src="../../../public/third-section-image.PNG"
@@ -109,12 +120,13 @@ export const InfoSections = () => {
             />
 
             <div className="flex flex-col items-center p-2 ">
-              <h3 className="font-bold text-xl mb-4">CLEANING</h3>
+              <h3 className="font-bold text-xl mb-4">LIMPIEZA</h3>
               <p className=" w-[50%]">
-                Cleanings are an important part of maintaining good oral health.
-                They help remove plaque and tartar buildup, which can lead to
-                tooth decay and gum disease. Regular cleanings can also help
-                prevent cavities and other dental problems.
+                Las limpiezas son una parte importante del mantenimiento de una
+                buena salud bucodental. Ayudan a eliminar la placa y la
+                acumulación de sarro, que pueden provocar caries y enfermedades
+                de las encías en . Las limpiezas regulares también pueden ayudar
+                a a prevenir las caries y otros problemas dentales.
               </p>
             </div>
           </li>
@@ -125,12 +137,13 @@ export const InfoSections = () => {
               className="w-[150px] h-[100px] object-cover block "
             />
             <div className="flex flex-col items-center p-2 ">
-              <h3 className="font-bold text-xl mb-4">FILLING</h3>
+              <h3 className="font-bold text-xl mb-4">RELLENO</h3>
               <p className="w-[50%]">
-                Fillings are a way to repair damaged or decayed teeth. They are
-                typically made of a composite resin or a metal alloy and are
-                placed in the cavity to fill it up. Fillings can help restore
-                the shape and function of a tooth and prevent further decay.
+                Los empastes son una forma de reparar los dientes dañados o
+                cariados. Son , normalmente de resina compuesta o una aleación
+                metálica, y se colocan en la cavidad para rellenarla. Los
+                empastes pueden ayudar a restaurar la forma y la función de un
+                diente y prevenir nuevas caries.
               </p>
             </div>
           </li>
@@ -142,13 +155,14 @@ export const InfoSections = () => {
             />
 
             <div className="flex flex-col items-center p-2 ">
-              <h3 className="font-bold text-xl">CLEANING</h3>
+              <h3 className="font-bold text-xl">EXTRACCIÓN</h3>
               <p className="mb-4 w-[60%]">
-                Extraction is the process of removing a tooth from the mouth. It
-                is typically done when a tooth is damaged beyond repair or when
-                it is causing pain. Extraction can be done through a variety of
-                methods, including extraction with a drill, extraction with a
-                laser, or extraction with a surgical technique.
+                La extracción es el proceso de sacar un diente de la boca. Se
+                hace normalmente cuando un diente está dañado sin posibilidad de
+                reparación o cuando está causando dolor. La extracción se puede
+                realizar a través de una variedad de métodos , incluyendo la
+                extracción con un taladro, la extracción con un láser , o la
+                extracción con una técnica quirúrgica.
               </p>
             </div>
           </li>
