@@ -29,7 +29,7 @@ export const Appointment = () => {
             <tr className="border-b hover:bg-gray-100 transition-colors">
               <td className="px-6 py-4">2</td>
               <td className="px-6 py-4">Dr. Jane Smith</td>
-              <td className="px-6 py-4 text-gray-400 italic" colSpan={2}>
+              <td className="px-6 py-4 dtext-gray-400 italic" colSpan={2}>
                 Información no disponible
               </td>
               <td className="py-4 flex">

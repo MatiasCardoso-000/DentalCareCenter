@@ -1,3 +1,4 @@
+import { Footer } from "../Footer/Footer";
 import { Header } from "../Header/Header";
 import { InfoSections } from "../InfoSections/InfoSections";
 
@@ -6,6 +7,7 @@ export const Home = () => {
     <>
      <Header/>
      <InfoSections/>
+     <Footer/>
     </>
   );
 };
