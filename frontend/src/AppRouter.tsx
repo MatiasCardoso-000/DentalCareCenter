@@ -6,6 +6,7 @@ import { Home } from "./components/Home/Home";
 import { ServicesPage } from "./pages/ServicesPage/ServicesPage";
 import { AppointmentPage } from "./pages/AppointmentPage/AppointmentPage";
 import { ContactPage } from "./pages/ContactPage/ContactPage";
+import { AboutPage } from "./pages/AboutPage/AboutPage";
 
 export const AppRouter = () => {
   return (
@@ -20,6 +21,7 @@ export const AppRouter = () => {
           <Route path="/servicios" element={<ServicesPage />} />
           <Route path="/contacto" element={<ContactPage />} />
           <Route path="/citas" element={<AppointmentPage />} />
+          <Route path="/nosotros" element={<AboutPage />} />
         </Routes>
       </Router>
     </main>
