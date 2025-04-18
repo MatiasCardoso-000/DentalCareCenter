@@ -1,10 +1,9 @@
 import mongoose from "mongoose";
-import {  MONGODB_URI } from "./config/config";
 
 // Función para conectar a la base de datos
 
-
 export const connectDB = async () => {
+ const MONGODB_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/turnodentista'
   
   try {
     if (!MONGODB_URI ) {
