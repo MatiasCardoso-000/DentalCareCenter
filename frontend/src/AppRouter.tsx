@@ -9,7 +9,7 @@ import { ContactPage } from "./pages/ContactPage/ContactPage";
 
 export const AppRouter = () => {
   return (
-    <main className="overflow-x-hidden">
+    <main className="overflow-x-hidden h-screen">
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />

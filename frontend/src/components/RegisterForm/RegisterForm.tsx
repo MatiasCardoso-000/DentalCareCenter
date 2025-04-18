@@ -4,9 +4,9 @@ import { useForm } from "react-hook-form";
 import { useAuth } from "../../hooks/useAuth";
 import { User } from "../../types/User.interface";
 import { Input } from "../Input/Input";
+import { Label } from "../Label/Label";
 
 export const RegisterForm = () => {
-  
   const {
     register,
     handleSubmit,
@@ -14,7 +14,6 @@ export const RegisterForm = () => {
   } = useForm<User>();
 
   const { signUp, errors: RegisterErrors } = useAuth();
-
 
   const onSubmit = handleSubmit(async (values: User) => {
     signUp(values);
@@ -31,7 +30,7 @@ export const RegisterForm = () => {
       })}
 
       <div className="absolute top-0 left-0">
-          <Logo />
+        <Logo />
       </div>
       <form
         className="md:w-[500px] flex flex-col gap-4 items-center"
@@ -41,9 +40,7 @@ export const RegisterForm = () => {
           <h1 className="text-2xl text-zinc-800 font-semibold">Register</h1>
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="username" className=" font-semibold text-zinc-800">
-            Name:
-          </label>
+          <Label htmlFor="username">Name:</Label>
           <Input
             type="text"
             id="username"
@@ -56,9 +53,7 @@ export const RegisterForm = () => {
           )}
         </div>
         <div className="flex flex-col  gap-2">
-          <label htmlFor="email" className=" font-semibold text-zinc-8000">
-            Email:
-          </label>
+          <Label htmlFor="email">Email:</Label>
           <Input
             type="email"
             id="email"
@@ -68,9 +63,7 @@ export const RegisterForm = () => {
           {errors.email && <p className="text-red-500">Email is required</p>}
         </div>
         <div className="flex flex-col  gap-2">
-          <label htmlFor="password" className=" font-semibold text-zinc-800">
-            Password:
-          </label>
+          <Label htmlFor="password">Password:</Label>
           <Input
             type="password"
             id="password"
@@ -82,9 +75,7 @@ export const RegisterForm = () => {
           )}
         </div>
         <div className="flex flex-col  gap-2">
-          <label htmlFor="password" className=" font-semibold text-zinc-800">
-            Confirm Password:
-          </label>
+          <Label htmlFor="confirmPassword">Confirm Password</Label>
           <Input
             type="password"
             id="confirmPassword"

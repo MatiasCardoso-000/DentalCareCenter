@@ -4,7 +4,7 @@ interface Params {
   type: string;
   id: string;
   placeholder: string;
-  register: ReturnType<UseFormRegister<FieldValues>>;
+  register?: ReturnType<UseFormRegister<FieldValues>>;
 }
 
 export const Input = ({ type,  id, placeholder,register }: Params) => {
@@ -15,7 +15,7 @@ export const Input = ({ type,  id, placeholder,register }: Params) => {
       id={id}
       placeholder={placeholder}
       {...register}
-      className="border rounded-md border-zinc-800 p-4 md:w-[450px]  outline-0 placeholder-zinc-800 text-zinc-800"
+      className="border rounded-md border-zinc-800 p-4 w-full md:w-[450px]  outline-0 placeholder-zinc-800 text-zinc-800"
     />
   );
 };
