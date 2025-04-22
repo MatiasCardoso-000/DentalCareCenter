@@ -13,7 +13,7 @@ export const connectDB = async () => {
     }
 
     console.log(mongoose.connection.readyState);
-    await mongoose.connect(MONGODB_URI);
+    await mongoose.connect(MONGODB_URI, {dbName: "RegisterUsers_DATABASE"});
     console.log(mongoose.connection.readyState);
   } catch (err) {
     console.error(err);
