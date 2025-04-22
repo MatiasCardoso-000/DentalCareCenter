@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "bun run src/watch.ts",
-    "start": "bun run src/index.ts",
+    "start": "bun run tsc src/index.ts",
     "build": "bun build src/index.ts --outdir dist",
     "stage": "bun build src/index.ts --outdir dist && git status && git add ."
   },
